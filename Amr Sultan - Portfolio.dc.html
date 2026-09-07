@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  html { scroll-behavior: smooth; background: #F6F5F2; }
+  body { margin: 0; background: #F6F5F2; color: #101011; font-family: 'Schibsted Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; text-wrap: pretty; }
+  * { box-sizing: border-box; }
+  a { color: #101011; text-decoration: none; }
+  a:hover { color: #A65837; }
+  ::selection { background: #101011; color: #F6F5F2; }
+  input, textarea, button { font-family: inherit; }
+  @keyframes cue { 0%,100% { transform: translateY(0); opacity: .3 } 50% { transform: translateY(6px); opacity: 1 } }
+  @keyframes livedot { 0%,100% { box-shadow: 0 0 0 0 rgba(166,88,55,.32) } 50% { box-shadow: 0 0 0 5px rgba(166,88,55,0) } }
+  @keyframes eyeglow { 0%,100% { opacity: .82 } 50% { opacity: 1 } }
+</style>
+</helmet>
+
+<div style="max-width:100%;overflow-x:hidden;background:#F6F5F2">
+
+  <header style="position:sticky;top:0;z-index:40;backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);background:rgba(246,245,242,0.72);border-bottom:1px solid #E6E4DE">
+    <div style="max-width:1200px;margin:0 auto;padding:0 28px;height:50px;display:flex;align-items:center;gap:20px">
+      <a href="#top" style="display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:600;letter-spacing:-0.005em;color:#101011">
+        <span style="width:7px;height:7px;border-radius:50%;background:#A65837;animation:livedot 3s ease-in-out infinite"></span>
+        <span>Amr Ali Sultan</span>
+      </a>
+      <nav style="margin-left:auto;display:flex;align-items:center;gap:4px">
+        <a href="#work" style="color:#6B6B70;font-size:13px;padding:7px 12px;border-radius:999px" style-hover="color:#101011;background:#EBE9E3">Work</a>
+        <a href="#capabilities" style="color:#6B6B70;font-size:13px;padding:7px 12px;border-radius:999px" style-hover="color:#101011;background:#EBE9E3">Capabilities</a>
+        <a href="#stack" style="color:#6B6B70;font-size:13px;padding:7px 12px;border-radius:999px" style-hover="color:#101011;background:#EBE9E3">Stack</a>
+        <a href="#about" style="color:#6B6B70;font-size:13px;padding:7px 12px;border-radius:999px" style-hover="color:#101011;background:#EBE9E3">About</a>
+        <a href="#contact" style="margin-left:8px;background:#101011;color:#F6F5F2;font-size:13px;font-weight:500;padding:8px 17px;border-radius:999px" style-hover="background:#A65837;color:#FFFFFF">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="top" style="position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:clamp(24px,4vh,56px) 28px clamp(24px,4vh,56px);overflow:hidden">
+    <div style="position:relative;flex:1;min-height:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));align-items:center;gap:clamp(14px,3vw,72px);max-width:1200px;margin:0 auto;width:100%">
+      <div style="position:relative;z-index:3;display:flex;flex-direction:column;align-items:flex-start;gap:clamp(12px,2vh,20px);padding:clamp(10px,2vh,36px) 0">
+        <div style="display:inline-flex;align-items:center;gap:9px;border:1px solid #E0DED7;background:rgba(255,255,255,0.72);padding:7px 15px;border-radius:999px;font-size:12px;color:#6B6B70">
+          <span style="width:6px;height:6px;border-radius:50%;background:#A65837"></span>
+          <span>Open for freelance · Web · AI agents · Android</span>
+        </div>
+        <h1 style="margin:0;font-size:clamp(29px,5.2vw,82px);line-height:0.96;letter-spacing:-0.046em;font-weight:600;max-width:16ch">Most freelancers have side projects.</h1>
+        <h1 style="margin:-8px 0 0;font-size:clamp(29px,5.2vw,82px);line-height:0.96;letter-spacing:-0.046em;font-weight:600;color:#A65837;max-width:16ch">I have systems in production.</h1>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:14px">
+          <a href="#contact" style="background:#101011;color:#F6F5F2;padding:15px 30px;font-size:15px;font-weight:500;border-radius:999px" style-hover="background:#A65837;color:#FFFFFF">Start a project</a>
+          <a href="#work" style="border:1px solid #D8D5CE;background:rgba(255,255,255,0.6);color:#101011;padding:15px 30px;font-size:15px;font-weight:500;border-radius:999px" style-hover="border-color:#101011">See selected work</a>
+        </div>
+      </div>
+
+      <div style="position:relative;width:100%;min-height:0;height:clamp(210px,40vh,540px);max-width:560px;justify-self:center">
+        <div id="hero-fallback" style="position:absolute;left:50%;top:50%;width:min(260px,48vw);transform:translate(-50%,-50%);pointer-events:none">
+        <div style="position:relative;width:100%;aspect-ratio:0.88;border-radius:34% 34% 30% 30% / 30%;background:linear-gradient(160deg,#FFFFFF 0%,#E6E3DC 62%,#D8D5CD 100%);box-shadow:0 40px 70px rgba(16,16,17,0.14),inset 0 2px 3px rgba(255,255,255,0.9)">
+          <div style="position:absolute;left:11%;top:26%;width:78%;height:40%;border-radius:26px;background:linear-gradient(165deg,#191A1D,#0A0A0C);box-shadow:inset 0 2px 6px rgba(0,0,0,0.6)">
+            <div style="position:absolute;left:15%;top:26%;width:26%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 38% 34%, #3A3A42 0%, #0C0C11 58%);box-shadow:inset 0 0 6px rgba(0,0,0,0.8)">
+              <div style="position:absolute;left:28%;top:28%;width:44%;aspect-ratio:1;border-radius:50%;border:3px solid #E0906B;box-shadow:0 0 12px rgba(224,144,107,0.7);animation:eyeglow 4s ease-in-out infinite"></div>
+            </div>
+            <div style="position:absolute;right:15%;top:26%;width:26%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 38% 34%, #3A3A42 0%, #0C0C11 58%);box-shadow:inset 0 0 6px rgba(0,0,0,0.8)">
+              <div style="position:absolute;left:28%;top:28%;width:44%;aspect-ratio:1;border-radius:50%;border:3px solid #E0906B;box-shadow:0 0 12px rgba(224,144,107,0.7);animation:eyeglow 4s ease-in-out infinite"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <canvas id="hero-canvas" style="position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none"></canvas>
+      </div>
+    </div>
+
+  </section>
+
+  <section style="padding:0 28px clamp(80px,11vw,160px);border-top:1px solid #E6E4DE">
+    <div style="max-width:1200px;margin:0 auto;padding:18px 0 clamp(56px,8vw,110px);display:flex;flex-wrap:wrap;gap:14px;align-items:center;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#6B6B70">
+      <span>Cairo · GMT+2 · Remote</span>
+      <span style="margin-left:auto">Freelance capacity: open</span>
+    </div>
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(40px,6vw,88px)">
+      <div data-reveal="1">
+        <div style="font-size:clamp(56px,7vw,104px);font-weight:600;letter-spacing:-0.05em;line-height:0.94;font-variant-numeric:tabular-nums">228</div>
+        <div style="font-size:15px;line-height:1.6;color:#55555A;margin-top:18px;max-width:24ch">Automated data-quality rules running in production</div>
+      </div>
+      <div data-reveal="1">
+        <div style="font-size:clamp(56px,7vw,104px);font-weight:600;letter-spacing:-0.05em;line-height:0.94;color:#A65837;font-variant-numeric:tabular-nums">100%</div>
+        <div style="font-size:15px;line-height:1.6;color:#55555A;margin-top:18px;max-width:24ch">Retrieval accuracy on the UniGuideAI evaluation set</div>
+      </div>
+      <div data-reveal="1">
+        <div style="font-size:clamp(56px,7vw,104px);font-weight:600;letter-spacing:-0.05em;line-height:0.94;font-variant-numeric:tabular-nums">3</div>
+        <div style="font-size:15px;line-height:1.6;color:#55555A;margin-top:18px;max-width:24ch">Model tiers routed for cost control: Haiku, Sonnet, Opus</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" style="background:#08080A;color:#F2F1EE;padding:clamp(96px,13vw,200px) 28px">
+    <div style="max-width:1200px;margin:0 auto">
+      <p data-reveal="1" style="margin:0 auto;max-width:22ch;text-align:center;font-size:clamp(30px,5vw,68px);font-weight:600;letter-spacing:-0.045em;line-height:1.02">A demo is easy. Authentication, cost per request, retrieval quality and deployment are the job.</p>
+
+      <div data-reveal="1" style="display:flex;align-items:baseline;gap:20px;flex-wrap:wrap;margin-top:clamp(80px,11vw,160px);padding-bottom:26px;border-bottom:1px solid #26262B">
+        <div style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#E0906B">Selected work</div>
+        <div style="font-size:13px;color:#9A9AA2;margin-left:auto">Six systems · four of them run inside an enterprise</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(16px,2vw,24px);margin-top:clamp(28px,4vw,44px)">
+
+        <button type="button" onClick="{{ open0 }}" data-reveal="1" style="grid-column:1 / -1;position:relative;overflow:hidden;text-align:left;color:inherit;font:inherit;background:#131316;border:1px solid #232328;border-radius:28px;padding:clamp(34px,5vw,68px);display:flex;flex-direction:column;gap:22px;cursor:pointer;transition:border-color .4s,transform .4s,background .4s" style-hover="border-color:#4C4C55;transform:translateY(-4px);background:#17171B">
+          <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:14px">
+            <span style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#E0906B">01 — Thesis project</span>
+            <span style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#9A9AA2;margin-left:auto">Case study →</span>
+          </div>
+          <div style="font-size:clamp(28px,4.2vw,56px);font-weight:600;letter-spacing:-0.042em;line-height:1;max-width:20ch">UniGuideAI — agentic academic guidance</div>
+          <p style="margin:0;max-width:62ch;color:#B8B8BF;font-size:clamp(16px,1.5vw,19px);line-height:1.58">An agentic system that answers student academic questions from university regulations and course data. Built with LangChain, LangGraph, and RAG. Achieved 100% retrieval accuracy on the evaluation set.</p>
+          <div style="font-size:13px;letter-spacing:0.04em;color:#83838C;margin-top:4px">LangGraph · RAG · Python · agents</div>
+        </button>
+
+        <button type="button" onClick="{{ open1 }}" data-reveal="1" style="grid-column:1 / -1;position:relative;overflow:hidden;text-align:left;color:inherit;font:inherit;background:#131316;border:1px solid #232328;border-radius:28px;padding:clamp(34px,5vw,68px);display:flex;flex-direction:column;gap:22px;cursor:pointer;transition:border-color .4s,transform .4s,background .4s" style-hover="border-color:#4C4C55;transform:translateY(-4px);background:#17171B">
+          <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:14px">
+            <span style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#E0906B">02 — Enterprise · in production</span>
+            <span style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#9A9AA2;margin-left:auto">Case study →</span>
+          </div>
+          <div style="font-size:clamp(28px,4.2vw,56px);font-weight:600;letter-spacing:-0.042em;line-height:1;max-width:20ch">Multi-persona AI business assistant</div>
+          <p style="margin:0;max-width:62ch;color:#B8B8BF;font-size:clamp(16px,1.5vw,19px);line-height:1.58">An internal AI assistant with distinct expert personas, each grounded in the company's own rule and SAP documentation repositories. I migrated the backend from OpenAI to the Anthropic API and built tiered model routing across Haiku, Sonnet, and Opus to cut cost while preserving answer quality.</p>
+          <div style="font-size:13px;letter-spacing:0.04em;color:#83838C;margin-top:4px">Claude API · RAG · FastAPI · SQLAlchemy · model routing</div>
+        </button>
+
+        <button type="button" onClick="{{ open2 }}" data-reveal="1" style="text-align:left;color:inherit;font:inherit;background:#0E0E11;border:1px solid #202025;border-radius:24px;padding:clamp(28px,3vw,44px);display:flex;flex-direction:column;gap:16px;cursor:pointer;transition:border-color .4s,transform .4s,background .4s" style-hover="border-color:#4C4C55;transform:translateY(-4px);background:#15151A">
+          <span style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#9A9AA2">03 — Enterprise · in production</span>
+          <div style="font-size:clamp(22px,2.4vw,30px);font-weight:600;letter-spacing:-0.032em;line-height:1.1">Customer data quality agent</div>
+          <p style="margin:0;color:#B8B8BF;font-size:16px;line-height:1.6">228 automated data-quality rules enforced against customer master data, with a dark enterprise dashboard for reviewing and resolving violations.</p>
+          <div style="font-size:13px;color:#83838C;margin-top:auto;padding-top:8px">Python · data quality · React</div>
+        </button>
+
+        <button type="button" onClick="{{ open3 }}" data-reveal="1" style="text-align:left;color:inherit;font:inherit;background:#0E0E11;border:1px solid #202025;border-radius:24px;padding:clamp(28px,3vw,44px);display:flex;flex-direction:column;gap:16px;cursor:pointer;transition:border-color .4s,transform .4s,background .4s" style-hover="border-color:#4C4C55;transform:translateY(-4px);background:#15151A">
+          <span style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#9A9AA2">04 — Enterprise · in production</span>
+          <div style="font-size:clamp(22px,2.4vw,30px);font-weight:600;letter-spacing:-0.032em;line-height:1.1">AI-powered e-learning platform</div>
+          <p style="margin:0;color:#B8B8BF;font-size:16px;line-height:1.6">A full e-learning application built with a team of four, deployed on Azure Container Apps.</p>
+          <div style="font-size:13px;color:#83838C;margin-top:auto;padding-top:8px">React · TypeScript · FastAPI · Azure</div>
+        </button>
+
+        <button type="button" onClick="{{ open4 }}" data-reveal="1" style="text-align:left;color:inherit;font:inherit;background:#0E0E11;border:1px solid #202025;border-radius:24px;padding:clamp(28px,3vw,44px);display:flex;flex-direction:column;gap:16px;cursor:pointer;transition:border-color .4s,transform .4s,background .4s" style-hover="border-color:#4C4C55;transform:translateY(-4px);background:#15151A">
+          <span style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#9A9AA2">05 — Product</span>
+          <div style="font-size:clamp(22px,2.4vw,30px);font-weight:600;letter-spacing:-0.032em;line-height:1.1">Natural-language analytics for spreadsheets</div>
+          <p style="margin:0;color:#B8B8BF;font-size:16px;line-height:1.6">Upload a CSV or Excel file and ask questions in plain English; the system runs the analysis and returns charts and explanations.</p>
+          <div style="font-size:13px;color:#83838C;margin-top:auto;padding-top:8px">Python · LLM · data analysis</div>
+        </button>
+
+        <button type="button" onClick="{{ open5 }}" data-reveal="1" style="text-align:left;color:inherit;font:inherit;background:#0E0E11;border:1px solid #202025;border-radius:24px;padding:clamp(28px,3vw,44px);display:flex;flex-direction:column;gap:16px;cursor:pointer;transition:border-color .4s,transform .4s,background .4s" style-hover="border-color:#4C4C55;transform:translateY(-4px);background:#15151A">
+          <span style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#9A9AA2">06 — Developer tool</span>
+          <div style="font-size:clamp(22px,2.4vw,30px);font-weight:600;letter-spacing:-0.032em;line-height:1.1">GitHub repository chatbot</div>
+          <p style="margin:0;color:#B8B8BF;font-size:16px;line-height:1.6">A RAG chatbot that answers questions about any GitHub codebase.</p>
+          <div style="font-size:13px;color:#83838C;margin-top:auto;padding-top:8px">RAG · LangChain · FastAPI</div>
+        </button>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="capabilities" style="padding:clamp(96px,13vw,200px) 28px">
+    <div style="max-width:1200px;margin:0 auto">
+      <div data-reveal="1" style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#A65837">What I build</div>
+      <h2 data-reveal="1" style="margin:22px 0 0;font-size:clamp(30px,5vw,72px);font-weight:600;letter-spacing:-0.046em;line-height:1;max-width:22ch">Three things, done properly. Not a menu of everything.</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(36px,5vw,72px);margin-top:clamp(56px,7vw,112px)">
+        <div data-reveal="1" style="display:flex;flex-direction:column;gap:16px;border-top:1px solid #101011;padding-top:26px">
+          <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#6B6B70">01</div>
+          <div style="font-size:clamp(24px,2.6vw,32px);font-weight:600;letter-spacing:-0.034em">Web applications</div>
+          <p style="margin:0;color:#55555A;font-size:16.5px;line-height:1.62">React/TypeScript frontends on FastAPI backends. Auth, dashboards, admin panels, database design, deployment. From an idea to something running on a real URL.</p>
+        </div>
+        <div data-reveal="1" style="display:flex;flex-direction:column;gap:16px;border-top:1px solid #A65837;padding-top:26px">
+          <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#A65837">02</div>
+          <div style="font-size:clamp(24px,2.6vw,32px);font-weight:600;letter-spacing:-0.034em">AI agents &amp; LLM systems</div>
+          <p style="margin:0;color:#55555A;font-size:16.5px;line-height:1.62">RAG pipelines, multi-agent orchestration, MCP integrations, tool-using agents, document Q&amp;A, natural-language analytics. Built on the Anthropic Claude API and OpenAI, with LangChain and LangGraph. Includes the unglamorous production parts: model routing for cost control, evaluation, retrieval quality, guardrails.</p>
+        </div>
+        <div data-reveal="1" style="display:flex;flex-direction:column;gap:16px;border-top:1px solid #101011;padding-top:26px">
+          <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#6B6B70">03</div>
+          <div style="font-size:clamp(24px,2.6vw,32px);font-weight:600;letter-spacing:-0.034em">Android apps</div>
+          <p style="margin:0;color:#55555A;font-size:16.5px;line-height:1.62">Cross-platform mobile in React Native, Android-first: offline-capable, device integrations, clean modern UI.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="stack" style="padding:0 28px clamp(96px,13vw,200px)">
+    <div style="max-width:1200px;margin:0 auto">
+      <div data-reveal="1" style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#A65837">Technical stack</div>
+      <h2 data-reveal="1" style="margin:22px 0 0;font-size:clamp(30px,5vw,72px);font-weight:600;letter-spacing:-0.046em;line-height:1;max-width:20ch">What I actually work in, day to day.</h2>
+      <div style="margin-top:clamp(48px,6vw,88px);display:flex;flex-direction:column;gap:clamp(36px,4vw,56px)">
+        <div data-reveal="1" style="display:grid;grid-template-columns:minmax(120px,180px) minmax(0,1fr);gap:14px 44px">
+          <div style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#6B6B70;padding-top:8px">Languages</div>
+          <div style="font-size:clamp(20px,2.2vw,28px);font-weight:500;letter-spacing:-0.028em;line-height:1.34;color:#101011">Python · TypeScript / JavaScript · SQL</div>
+        </div>
+        <div data-reveal="1" style="display:grid;grid-template-columns:minmax(120px,180px) minmax(0,1fr);gap:14px 44px">
+          <div style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#6B6B70;padding-top:8px">Backend</div>
+          <div style="font-size:clamp(20px,2.2vw,28px);font-weight:500;letter-spacing:-0.028em;line-height:1.34;color:#101011">FastAPI · SQLAlchemy · PostgreSQL · REST APIs · Redis</div>
+        </div>
+        <div data-reveal="1" style="display:grid;grid-template-columns:minmax(120px,180px) minmax(0,1fr);gap:14px 44px">
+          <div style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#6B6B70;padding-top:8px">Frontend</div>
+          <div style="font-size:clamp(20px,2.2vw,28px);font-weight:500;letter-spacing:-0.028em;line-height:1.34;color:#101011">React · TypeScript · Tailwind CSS · Three.js</div>
+        </div>
+        <div data-reveal="1" style="display:grid;grid-template-columns:minmax(120px,180px) minmax(0,1fr);gap:14px 44px">
+          <div style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#A65837;padding-top:8px">AI / ML</div>
+          <div style="font-size:clamp(20px,2.2vw,28px);font-weight:500;letter-spacing:-0.028em;line-height:1.34;color:#101011">Anthropic Claude API · OpenAI · LangChain · LangGraph · RAG · vector search · MCP · prompt engineering · evaluation</div>
+        </div>
+        <div data-reveal="1" style="display:grid;grid-template-columns:minmax(120px,180px) minmax(0,1fr);gap:14px 44px">
+          <div style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#6B6B70;padding-top:8px">Mobile</div>
+          <div style="font-size:clamp(20px,2.2vw,28px);font-weight:500;letter-spacing:-0.028em;line-height:1.34;color:#101011">React Native · Android</div>
+        </div>
+        <div data-reveal="1" style="display:grid;grid-template-columns:minmax(120px,180px) minmax(0,1fr);gap:14px 44px">
+          <div style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#6B6B70;padding-top:8px">Data &amp; cloud</div>
+          <div style="font-size:clamp(20px,2.2vw,28px);font-weight:500;letter-spacing:-0.028em;line-height:1.34;color:#101011">Azure Container Apps · Azure PostgreSQL · Azure OpenAI Service · Databricks · Azure Data Factory · Power BI · Docker · Git / Azure DevOps</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:0 28px clamp(96px,13vw,200px)">
+    <div style="max-width:1200px;margin:0 auto">
+      <div data-reveal="1" style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#A65837">How I work</div>
+      <h2 data-reveal="1" style="margin:22px 0 0;font-size:clamp(30px,5vw,72px);font-weight:600;letter-spacing:-0.046em;line-height:1;max-width:22ch">Four steps. You always know where the project stands.</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:clamp(28px,3.5vw,48px);margin-top:clamp(48px,6vw,96px)">
+        <div data-reveal="1" style="border-top:1px solid #E6E4DE;padding-top:24px;display:flex;flex-direction:column;gap:12px">
+          <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#A65837">Step 01</div>
+          <div style="font-size:21px;font-weight:600;letter-spacing:-0.026em">Scope call</div>
+          <p style="margin:0;color:#55555A;font-size:15.5px;line-height:1.6">One call to pin down the problem, the constraints, and what "done" means. You get a written scope and a fixed timeline.</p>
+        </div>
+        <div data-reveal="1" style="border-top:1px solid #E6E4DE;padding-top:24px;display:flex;flex-direction:column;gap:12px">
+          <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#6B6B70">Step 02</div>
+          <div style="font-size:21px;font-weight:600;letter-spacing:-0.026em">Prototype in days</div>
+          <p style="margin:0;color:#55555A;font-size:15.5px;line-height:1.6">Something running you can click, not a slide deck. Deployed to a real URL in the first week.</p>
+        </div>
+        <div data-reveal="1" style="border-top:1px solid #E6E4DE;padding-top:24px;display:flex;flex-direction:column;gap:12px">
+          <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#6B6B70">Step 03</div>
+          <div style="font-size:21px;font-weight:600;letter-spacing:-0.026em">Iterate with you</div>
+          <p style="margin:0;color:#55555A;font-size:15.5px;line-height:1.6">Short cycles, visible progress, direct messaging. You see every build before it ships.</p>
+        </div>
+        <div data-reveal="1" style="border-top:1px solid #E6E4DE;padding-top:24px;display:flex;flex-direction:column;gap:12px">
+          <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#6B6B70">Step 04</div>
+          <div style="font-size:21px;font-weight:600;letter-spacing:-0.026em">Deploy and hand over</div>
+          <p style="margin:0;color:#55555A;font-size:15.5px;line-height:1.6">Containerized deployment, repository access, and documentation your own team can pick up. No lock-in on me.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" style="padding:0 28px clamp(96px,13vw,200px)">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(36px,5vw,88px)">
+      <div data-reveal="1">
+        <div style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#A65837">About</div>
+        <h2 style="margin:22px 0 0;font-size:clamp(28px,4vw,56px);font-weight:600;letter-spacing:-0.046em;line-height:1.02;max-width:18ch">Data Science at GIU, then production systems inside an enterprise.</h2>
+      </div>
+      <div data-reveal="1" style="display:flex;flex-direction:column;gap:24px;padding-top:8px">
+        <p style="margin:0;color:#3A3A40;font-size:clamp(16px,1.5vw,18.5px);line-height:1.68">I'm a Data Science senior at the German International University in Cairo. Alongside the degree I joined the Data &amp; AI team at a large multinational FMCG company as an intern and stayed on as a trainee — which is where I learned the difference between a demo and a system: authentication, cost per request, retrieval quality, deployment, and the people who depend on it working on Monday morning.</p>
+        <p style="margin:0;color:#3A3A40;font-size:clamp(16px,1.5vw,18.5px);line-height:1.68">Since then I've shipped internal AI assistants, a rule-driven data-quality agent, and a full e-learning platform on Azure. I hold Anthropic Academy certifications in building with the Claude API, MCP, and agent design. I take on freelance work in web applications, AI agents and LLM systems, and Android apps.</p>
+        <div style="margin-top:8px;font-size:13px;letter-spacing:0.04em;color:#6B6B70;line-height:1.9">Anthropic Academy — Claude API · MCP · Agent design</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="background:#08080A;color:#F2F1EE;padding:clamp(96px,13vw,190px) 28px clamp(64px,8vw,96px)">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(44px,6vw,88px)">
+      <div data-reveal="1">
+        <div style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#E0906B">Contact</div>
+        <h2 style="margin:24px 0 0;font-size:clamp(34px,5.4vw,76px);font-weight:600;letter-spacing:-0.05em;line-height:0.98;max-width:14ch">Tell me what you need built.</h2>
+        <p style="margin:26px 0 0;max-width:44ch;color:#B8B8BF;font-size:17px;line-height:1.62">Send a few lines about the problem and the deadline. I reply with a scope, a timeline, and a price — or an honest no.</p>
+        <div style="margin-top:46px;border-top:1px solid #26262B">
+          <a href="mailto:amrsultan505@gmail.com" style="display:flex;align-items:baseline;gap:18px;padding:22px 0;border-bottom:1px solid #26262B;color:#F2F1EE" style-hover="color:#E0906B">
+            <span style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#9A9AA2;min-width:80px">Email</span>
+            <span style="font-size:clamp(17px,1.6vw,20px)">amrsultan505@gmail.com</span>
+          </a>
+          <a href="https://www.linkedin.com/in/amr-ali-sultan" target="_blank" rel="noopener" style="display:flex;align-items:baseline;gap:18px;padding:22px 0;border-bottom:1px solid #26262B;color:#F2F1EE" style-hover="color:#E0906B">
+            <span style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#9A9AA2;min-width:80px">LinkedIn</span>
+            <span style="font-size:clamp(17px,1.6vw,20px)">linkedin.com/in/amr-ali-sultan</span>
+          </a>
+          <a href="{{ githubUrl }}" target="_blank" rel="noopener" style="display:flex;align-items:baseline;gap:18px;padding:22px 0;border-bottom:1px solid #26262B;color:#F2F1EE" style-hover="color:#E0906B">
+            <span style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#9A9AA2;min-width:80px">GitHub</span>
+            <span style="font-size:clamp(17px,1.6vw,20px)">github.com/YOUR_HANDLE</span>
+          </a>
+        </div>
+        <a href="/cv.pdf" download="Amr-Ali-Sultan-CV.pdf" style="display:inline-flex;align-items:center;gap:10px;margin-top:34px;border:1px solid #35353C;color:#F2F1EE;padding:14px 26px;font-size:15px;font-weight:500;border-radius:999px" style-hover="border-color:#E0906B;color:#E0906B">
+          <span>Download CV</span>
+          <span style="font-size:13px;color:#9A9AA2">PDF ↓</span>
+        </a>
+      </div>
+
+      <form onSubmit="{{ onSubmit }}" data-reveal="1" style="display:flex;flex-direction:column;gap:18px;background:#101013;border:1px solid #26262B;border-radius:28px;padding:clamp(28px,3.5vw,44px)">
+        <label style="display:flex;flex-direction:column;gap:9px">
+          <span style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#9A9AA2">Name</span>
+          <input type="text" name="name" required="required" autoComplete="name" style="background:#08080A;border:1px solid #2C2C32;border-radius:14px;color:#F2F1EE;font-size:16px;padding:15px 16px;outline:none" style-focus="border-color:#E0906B" />
+        </label>
+        <label style="display:flex;flex-direction:column;gap:9px">
+          <span style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#9A9AA2">Email</span>
+          <input type="email" name="email" required="required" autoComplete="email" style="background:#08080A;border:1px solid #2C2C32;border-radius:14px;color:#F2F1EE;font-size:16px;padding:15px 16px;outline:none" style-focus="border-color:#E0906B" />
+        </label>
+        <label style="display:flex;flex-direction:column;gap:9px">
+          <span style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#9A9AA2">What are you building?</span>
+          <textarea name="message" rows="5" required="required" style="background:#08080A;border:1px solid #2C2C32;border-radius:14px;color:#F2F1EE;font-size:16px;padding:15px 16px;outline:none;resize:vertical;min-height:140px" style-focus="border-color:#E0906B"></textarea>
+        </label>
+        <button type="submit" style="background:#F6F5F2;color:#08080A;border:none;border-radius:999px;padding:16px 22px;font-size:15px;font-weight:600;cursor:pointer;transition:background .25s,color .25s" style-hover="background:#E0906B;color:#08080A">Send message</button>
+        <div style="font-size:13px;line-height:1.6;color:#9A9AA2;min-height:18px">{{ formStatus }}</div>
+      </form>
+    </div>
+  </section>
+
+  <footer style="background:#08080A;border-top:1px solid #1C1C21;padding:28px 28px 36px">
+    <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:14px;align-items:center;font-size:12px;letter-spacing:0.06em;color:#83838C">
+      <span>Amr Ali Sultan — freelance software &amp; AI engineering</span>
+      <span style="margin-left:auto">Cairo · GMT+2 · Available</span>
+    </div>
+  </footer>
+
+  <sc-if value="{{ active }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeCase }}" style="position:fixed;inset:0;z-index:60;background:rgba(8,8,10,0.58);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);display:flex;align-items:flex-start;justify-content:center;padding:5vh 20px;overflow-y:auto">
+      <div onClick="{{ stop }}" style="width:100%;max-width:840px;background:#F6F5F2;color:#101011;border-radius:30px;padding:clamp(30px,4.5vw,60px);position:relative;box-shadow:0 50px 110px rgba(8,8,10,0.4)">
+        <button type="button" onClick="{{ closeCase }}" style="position:absolute;top:20px;right:20px;background:#EDEBE6;border:1px solid #DEDCD6;color:#55555A;border-radius:999px;width:36px;height:36px;font-size:16px;cursor:pointer" style-hover="border-color:#101011;color:#101011">×</button>
+        <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#A65837">{{ active.meta }}</div>
+        <h3 style="margin:18px 0 0;font-size:clamp(26px,3.6vw,44px);font-weight:600;letter-spacing:-0.044em;line-height:1.02;max-width:22ch">{{ active.title }}</h3>
+        <div style="display:flex;flex-direction:column;gap:30px;margin-top:38px;border-top:1px solid #E0DED7;padding-top:34px">
+          <div style="display:grid;grid-template-columns:minmax(110px,150px) minmax(0,1fr);gap:10px 32px">
+            <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#6B6B70">Problem</div>
+            <p style="margin:0;color:#3A3A40;font-size:16.5px;line-height:1.66">{{ active.problem }}</p>
+          </div>
+          <div style="display:grid;grid-template-columns:minmax(110px,150px) minmax(0,1fr);gap:10px 32px">
+            <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#6B6B70">What I built</div>
+            <p style="margin:0;color:#3A3A40;font-size:16.5px;line-height:1.66">{{ active.built }}</p>
+          </div>
+          <div style="display:grid;grid-template-columns:minmax(110px,150px) minmax(0,1fr);gap:10px 32px">
+            <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#6B6B70">Stack</div>
+            <div style="font-size:16px;color:#55555A;line-height:1.7">{{ active.stackLine }}</div>
+          </div>
+          <div style="display:grid;grid-template-columns:minmax(110px,150px) minmax(0,1fr);gap:10px 32px">
+            <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#A65837">Result</div>
+            <p style="margin:0;color:#101011;font-size:16.5px;line-height:1.66">{{ active.result }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;formspreeEndpoint&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://formspree.io/f/YOUR_FORM_ID&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Wiring&quot;},&quot;githubUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://github.com/YOUR_HANDLE&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Wiring&quot;},&quot;heroMotion&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:40,&quot;min&quot;:0,&quot;max&quot;:100,&quot;step&quot;:10,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Hero&quot;,&quot;unit&quot;:&quot;%&quot;},&quot;heroGaze&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:100,&quot;min&quot;:0,&quot;max&quot;:160,&quot;step&quot;:10,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Hero&quot;,&quot;unit&quot;:&quot;%&quot;},&quot;eyeColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#E0906B&quot;,&quot;options&quot;:[&quot;#E0906B&quot;,&quot;#F2F1EE&quot;,&quot;#7CA0FF&quot;,&quot;#A65837&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Hero&quot;}}">
+class Component extends DCLogic {
+  state = { active: null, formStatus: '' };
+
+  cases = [
+    {
+      meta: 'Thesis project · Higher education',
+      title: 'UniGuideAI — agentic academic guidance system',
+      problem: "Students hunt through university regulations and course data to answer basic academic questions. The answers exist, they're just buried in documents nobody wants to read.",
+      built: "An agentic system that routes a student's question to the right retrieval path over university regulations and course data, then answers from those sources. LangChain for the retrieval layer, LangGraph for the agent graph and control flow, with an evaluation set used to tune retrieval.",
+      stack: ['LangGraph', 'LangChain', 'RAG', 'Python', 'agents'],
+      result: '100% retrieval accuracy on the evaluation set.'
+    },
+    {
+      meta: 'Enterprise · In production',
+      title: 'Multi-persona AI business assistant',
+      problem: "Internal teams needed answers grounded in the company's own rule and SAP documentation repositories, from people with very different jobs. A single generic assistant answered all of them badly, and model cost scaled faster than usefulness.",
+      built: 'An internal AI assistant with distinct expert personas — data engineer, data analyst, project manager — each grounded in its own document repository. I migrated the backend from OpenAI to the Anthropic API and built tiered model routing across Haiku, Sonnet, and Opus. SQLAlchemy dual-engine persistence, a rolling chat-history window, per-project instruction memory, and a guided onboarding tour.',
+      stack: ['Claude API', 'RAG', 'FastAPI', 'SQLAlchemy', 'model routing'],
+      result: 'Cost per request cut through tiered routing while answer quality held. Running in production, used by internal teams.'
+    },
+    {
+      meta: 'Enterprise · In production',
+      title: 'Customer data quality agent',
+      problem: 'Customer master data drifts. Broken records move downstream long before anyone notices them.',
+      built: 'A rule-driven agent enforcing 228 automated data-quality rules against customer master data, with a dark enterprise dashboard for reviewing and resolving violations.',
+      stack: ['Python', 'data quality', 'agents', 'React'],
+      result: '228 rules enforced automatically, with one review surface for resolving violations.'
+    },
+    {
+      meta: 'Enterprise · In production',
+      title: 'AI-powered e-learning platform',
+      problem: 'A full e-learning product for enterprise use, delivered by a team of four on enterprise cloud infrastructure.',
+      built: 'React/TypeScript frontend, FastAPI backend, Azure PostgreSQL, Azure OpenAI, deployed on Azure Container Apps. I built the frontend authentication experience and worked on the container architecture and service connectivity.',
+      stack: ['React', 'TypeScript', 'FastAPI', 'Azure PostgreSQL', 'Azure Container Apps'],
+      result: 'Deployed and running on Azure Container Apps.'
+    },
+    {
+      meta: 'Product',
+      title: 'Natural-language analytics for spreadsheets',
+      problem: 'People with a spreadsheet and a question have to write code, or wait for someone who can.',
+      built: 'Upload a CSV or Excel file and ask questions in plain English; the system generates and runs the analysis, then returns charts and written explanations of what it did.',
+      stack: ['Python', 'LLM', 'data analysis'],
+      result: 'Plain-English questions in, charts and explanations out — no code written by the user.'
+    },
+    {
+      meta: 'Developer tool',
+      title: 'GitHub repository chatbot',
+      problem: 'Getting oriented in an unfamiliar codebase means reading it end to end before you can ask a simple question.',
+      built: 'A RAG chatbot that indexes any GitHub codebase and answers questions about it, built with LangChain, FastAPI, and the Claude API.',
+      stack: ['RAG', 'LangChain', 'FastAPI', 'Claude API'],
+      result: 'Point it at a repository and ask questions about the code in plain language.'
+    }
+  ];
+
+  componentDidMount() {
+    this._onKey = (e) => { if (e.key === 'Escape') this.setState({ active: null }); };
+    window.addEventListener('keydown', this._onKey);
+    this._mx = 0; this._my = 0; this._sy = 0; this._hasPointer = false;
+    this._onMove = (e) => {
+      this._hasPointer = true;
+      this._mx = (e.clientX / window.innerWidth - 0.5) * 2;
+      this._my = (e.clientY / window.innerHeight - 0.5) * 2;
+    };
+    this._onScroll = () => { this._sy = window.scrollY || 0; };
+    window.addEventListener('pointermove', this._onMove, { passive: true });
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this.initReveal();
+    this.initHero();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('keydown', this._onKey);
+    window.removeEventListener('pointermove', this._onMove);
+    window.removeEventListener('scroll', this._onScroll);
+    if (this._raf) cancelAnimationFrame(this._raf);
+    if (this._ro) this._ro.disconnect();
+    if (this._io) this._io.disconnect();
+    if (this._revealTimer) clearTimeout(this._revealTimer);
+    if (this._renderer) this._renderer.dispose();
+  }
+
+  initReveal() {
+    const nodes = Array.prototype.slice.call(document.querySelectorAll('[data-reveal]'));
+    if (!nodes.length) return;
+    const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const show = (n, delay) => {
+      n.style.transition = 'opacity .9s cubic-bezier(.16,.84,.44,1) ' + delay + 'ms, transform .9s cubic-bezier(.16,.84,.44,1) ' + delay + 'ms';
+      n.style.opacity = '1';
+      n.style.transform = 'none';
+    };
+    if (reduced || !('IntersectionObserver' in window)) return;
+    nodes.forEach((n) => {
+      if (n.getBoundingClientRect().top < window.innerHeight * 0.9) return; // already in view: leave alone
+      n.style.opacity = '0';
+      n.style.transform = 'translateY(26px)';
+    });
+    this._io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (!en.isIntersecting) return;
+        const sibs = Array.prototype.slice.call(en.target.parentNode.children).filter((c) => c.hasAttribute && c.hasAttribute('data-reveal'));
+        show(en.target, Math.min(3, Math.max(0, sibs.indexOf(en.target))) * 90);
+        this._io.unobserve(en.target);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    nodes.forEach((n) => this._io.observe(n));
+    // safety net: only rescue nodes that are in view but somehow still hidden
+    this._revealTimer = setTimeout(() => {
+      nodes.forEach((n) => {
+        if (n.style.opacity !== '0') return;
+        const r = n.getBoundingClientRect();
+        if (r.top < window.innerHeight && r.bottom > 0) show(n, 0);
+      });
+    }, 6000);
+  }
+
+  roundedGeo(THREE, w, h, r, depth, bevel) {
+    const s = new THREE.Shape();
+    const x = -w / 2, y = -h / 2;
+    r = Math.min(r, Math.min(w, h) / 2 - 0.001);
+    s.moveTo(x + r, y);
+    s.lineTo(x + w - r, y);
+    s.absarc(x + w - r, y + r, r, -Math.PI / 2, 0, false);
+    s.lineTo(x + w, y + h - r);
+    s.absarc(x + w - r, y + h - r, r, 0, Math.PI / 2, false);
+    s.lineTo(x + r, y + h);
+    s.absarc(x + r, y + h - r, r, Math.PI / 2, Math.PI, false);
+    s.lineTo(x, y + r);
+    s.absarc(x + r, y + r, r, Math.PI, Math.PI * 1.5, false);
+    const g = new THREE.ExtrudeGeometry(s, {
+      depth: depth, bevelEnabled: bevel > 0, bevelThickness: bevel,
+      bevelSize: bevel, bevelSegments: 3, curveSegments: 18
+    });
+    g.translate(0, 0, -depth / 2);
+    return g;
+  }
+
+  async initHero() {
+    const el = document.getElementById('hero-canvas');
+    if (!el) return;
+    let THREE;
+    try { THREE = await import('https://esm.sh/three@0.169.0'); }
+    catch (e) {
+      try { THREE = await import('https://unpkg.com/three@0.169.0/build/three.module.js'); }
+      catch (e2) { return; }
+    }
+
+    const fb = document.getElementById('hero-fallback');
+    if (fb) { fb.style.transition = 'opacity .8s ease'; fb.style.opacity = '0'; }
+
+    const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const motion = reduced ? 0 : (this.props.heroMotion ?? 40) / 40;
+    const gazeAmt = (this.props.heroGaze ?? 100) / 100;
+    const eyeHex = this.props.eyeColor || '#E0906B';
+
+    const renderer = new THREE.WebGLRenderer({ canvas: el, alpha: true, antialias: true, preserveDrawingBuffer: true });
+    renderer.setPixelRatio(Math.min(2, window.devicePixelRatio || 1));
+    renderer.setClearAlpha(0);
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.05;
+    this._renderer = renderer;
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 100);
+
+    const head = new THREE.Group();
+    scene.add(head);
+
+    const alloy = new THREE.MeshStandardMaterial({ color: '#EFEDE7', metalness: 0.42, roughness: 0.26 });
+    const alloyDark = new THREE.MeshStandardMaterial({ color: '#8E8B84', metalness: 0.62, roughness: 0.28 });
+    const shell = new THREE.MeshStandardMaterial({ color: '#191A1E', metalness: 0.5, roughness: 0.34 });
+    const glass = new THREE.MeshStandardMaterial({ color: '#0B0B0E', metalness: 0.45, roughness: 0.1 });
+    const lensBody = new THREE.MeshStandardMaterial({ color: '#0C0C11', metalness: 0.35, roughness: 0.07 });
+    const pupilMat = new THREE.MeshStandardMaterial({ color: '#050507', metalness: 0.1, roughness: 0.05 });
+    const glintMat = new THREE.MeshBasicMaterial({ color: '#FFFFFF' });
+    const lens = new THREE.MeshStandardMaterial({ color: '#241209', emissive: new THREE.Color(eyeHex), emissiveIntensity: 1.5, metalness: 0.15, roughness: 0.3 });
+    const stripMat = new THREE.MeshStandardMaterial({ color: '#241209', emissive: new THREE.Color(eyeHex), emissiveIntensity: 0.7, roughness: 0.4 });
+
+    // dark backing plate: gives the alloy face a hard silhouette
+    const backing = new THREE.Mesh(this.roundedGeo(THREE, 3.96, 4.52, 1.34, 0.42, 0.1), shell);
+    backing.position.z = -0.5;
+    backing.castShadow = true; backing.receiveShadow = true;
+    head.add(backing);
+
+    // skull: rounded slab, bevelled like a machined case
+    const skull = new THREE.Mesh(this.roundedGeo(THREE, 3.5, 4.05, 1.15, 1.15, 0.28), alloy);
+    skull.castShadow = true; skull.receiveShadow = true;
+    head.add(skull);
+
+    // recessed visor band the eyes sit inside
+    const recess = new THREE.Mesh(this.roundedGeo(THREE, 2.94, 1.86, 0.86, 0.16, 0.04), glass);
+    recess.position.set(0, 0.26, 0.82);
+    recess.receiveShadow = true;
+    head.add(recess);
+
+    const strip = new THREE.Mesh(this.roundedGeo(THREE, 1.36, 0.07, 0.035, 0.05, 0.012), stripMat);
+    strip.position.set(0, 1.36, 0.88);
+    head.add(strip);
+
+    const seam = new THREE.Mesh(this.roundedGeo(THREE, 3.02, 0.055, 0.027, 0.05, 0.01), alloyDark);
+    seam.position.set(0, -0.92, 0.87);
+    head.add(seam);
+
+    // eyes: glossy lens domes that rotate to face the cursor
+    const eyes = new THREE.Group();
+    eyes.position.set(0, 0.26, 0.9);
+    head.add(eyes);
+    const ballGeo = new THREE.SphereGeometry(0.31, 48, 32);
+    const irisGeo = new THREE.TorusGeometry(0.14, 0.05, 20, 48);
+    const pupilGeo = new THREE.SphereGeometry(0.105, 26, 18);
+    const glintGeo = new THREE.SphereGeometry(0.034, 14, 10);
+    const socketGeo = new THREE.TorusGeometry(0.375, 0.048, 16, 52);
+    const eyeUnits = [];
+    [-0.62, 0.62].forEach((sx) => {
+      const socket = new THREE.Mesh(socketGeo, alloyDark);
+      socket.position.set(sx, 0, 0.02);
+      eyes.add(socket);
+      const pivot = new THREE.Group();
+      pivot.position.set(sx, 0, 0);
+      eyes.add(pivot);
+      const ball = new THREE.Mesh(ballGeo, lensBody);
+      ball.castShadow = true;
+      pivot.add(ball);
+      const iris = new THREE.Mesh(irisGeo, lens);
+      iris.position.z = 0.245;
+      pivot.add(iris);
+      const pupil = new THREE.Mesh(pupilGeo, pupilMat);
+      pupil.position.z = 0.265;
+      pivot.add(pupil);
+      const glint = new THREE.Mesh(glintGeo, glintMat);
+      glint.position.set(-0.1, 0.12, 0.285);
+      pivot.add(glint);
+      eyeUnits.push({ pivot: pivot, iris: iris });
+    });
+
+    const vent = new THREE.Mesh(this.roundedGeo(THREE, 1.05, 0.11, 0.055, 0.07, 0.015), alloyDark);
+    vent.position.set(0, -1.42, 0.87);
+    head.add(vent);
+    const portGeo = new THREE.CylinderGeometry(0.19, 0.19, 0.2, 32);
+    const portL = new THREE.Mesh(portGeo, alloyDark);
+    portL.rotation.z = Math.PI / 2;
+    portL.position.set(-2.04, 0.26, 0);
+    portL.castShadow = true;
+    const portR = portL.clone();
+    portR.position.set(2.04, 0.26, 0);
+    head.add(portL); head.add(portR);
+
+    const ground = new THREE.Mesh(new THREE.PlaneGeometry(90, 90), new THREE.ShadowMaterial({ opacity: 0.16 }));
+    ground.rotation.x = -Math.PI / 2;
+    ground.position.y = -2.62;
+    ground.receiveShadow = true;
+    scene.add(ground);
+
+    scene.add(new THREE.HemisphereLight('#FFFFFF', '#D6D2C9', 0.7));
+    const key = new THREE.DirectionalLight('#FFFFFF', 2.5);
+    key.position.set(-1.3, 8.6, 4.2);
+    key.castShadow = true;
+    key.shadow.mapSize.set(1024, 1024);
+    key.shadow.camera.left = -6; key.shadow.camera.right = 6;
+    key.shadow.camera.top = 6; key.shadow.camera.bottom = -6;
+    key.shadow.bias = -0.0006;
+    scene.add(key);
+    const fill = new THREE.DirectionalLight('#FFE8D6', 0.9);
+    fill.position.set(6, 2, -4);
+    scene.add(fill);
+    const rim = new THREE.DirectionalLight('#FFFFFF', 0.7);
+    rim.position.set(0, -3, -6);
+    scene.add(rim);
+
+    // metal needs something to reflect, otherwise it renders flat grey
+    try {
+      const mod = await import('https://esm.sh/three@0.169.0/examples/jsm/environments/RoomEnvironment.js');
+      const pmrem = new THREE.PMREMGenerator(renderer);
+      scene.environment = pmrem.fromScene(new mod.RoomEnvironment(), 0.03).texture;
+      if ('environmentIntensity' in scene) scene.environmentIntensity = 0.9;
+    } catch (envErr) {
+      alloy.metalness = 0.14; alloy.roughness = 0.38;
+      alloyDark.metalness = 0.2; alloyDark.roughness = 0.32;
+      shell.metalness = 0.18; glass.metalness = 0.2; lensBody.metalness = 0.12;
+    }
+
+    const resize = () => {
+      const w = el.clientWidth || 1, h = el.clientHeight || 1;
+      renderer.setSize(w, h, false);
+      camera.aspect = w / h;
+      camera.fov = 32;
+      camera.position.set(0, 0.5, 12.5);
+      camera.lookAt(0, 0.2, 0);
+      camera.updateProjectionMatrix();
+    };
+    resize();
+    this._ro = new ResizeObserver(resize);
+    this._ro.observe(el);
+
+    const clock = new THREE.Clock();
+    let yaw = 0, pitch = 0, sy = 0;
+    const gazeTarget = new THREE.Vector3();
+    const tmp = new THREE.Vector3();
+    let sacX = 0, sacY = 0, sacTX = 0, sacTY = 0, nextSac = 3 + Math.random() * 3;
+
+    const tick = () => {
+      this._raf = requestAnimationFrame(tick);
+      if (document.hidden) return;
+      const t = clock.getElapsedTime();
+      const idle = motion ? Math.sin(t * 0.5) * 0.16 : 0;
+
+      // gaze target: cursor, or a slow idle sweep before the pointer ever moves
+      const tx = (this._hasPointer ? this._mx : Math.sin(t * 0.35) * 0.5) * gazeAmt;
+      const ty = (this._hasPointer ? this._my : Math.cos(t * 0.28) * 0.3) * gazeAmt;
+
+      const scrollProg = Math.max(0, Math.min(1, this._sy / Math.max(320, window.innerHeight * 0.9)));
+      sy += (scrollProg - sy) * 0.08;
+
+      yaw += ((tx * 0.5 + idle * 0.4) - yaw) * 0.07;
+      pitch += ((ty * 0.32 + sy * 0.34) - pitch) * 0.07;
+      head.rotation.y = yaw;
+      head.rotation.x = pitch;
+      head.rotation.z = -yaw * 0.09;
+      head.position.y = (motion ? Math.sin(t * 0.75) * 0.055 : 0) - sy * 0.9;
+      head.position.z = -sy * 1.6;
+
+      // occasional saccade so the gaze feels alive rather than locked
+      if (motion && t > nextSac) {
+        sacTX = (Math.random() - 0.5) * 1.5;
+        sacTY = (Math.random() - 0.5) * 0.9;
+        nextSac = t + 2.2 + Math.random() * 4;
+        setTimeout(() => { sacTX = 0; sacTY = 0; }, 320);
+      }
+      sacX += (sacTX - sacX) * 0.22;
+      sacY += (sacTY - sacY) * 0.22;
+
+      // unproject the cursor onto a plane in front of the head, then look at it
+      const gx = this._hasPointer ? this._mx : Math.sin(t * 0.35) * 0.5;
+      const gy = this._hasPointer ? this._my : Math.cos(t * 0.28) * 0.3;
+      tmp.set(gx, -gy, 0.5).unproject(camera).sub(camera.position).normalize();
+      const dz = (3.2 - camera.position.z) / (tmp.z || -1);
+      gazeTarget.copy(camera.position).addScaledVector(tmp, dz);
+      gazeTarget.x += sacX;
+      gazeTarget.y += sacY;
+      for (let i = 0; i < eyeUnits.length; i++) eyeUnits[i].pivot.lookAt(gazeTarget);
+
+      if (motion) {
+        const ap = 1 + Math.sin(t * 1.15) * 0.07;
+        for (let i = 0; i < eyeUnits.length; i++) eyeUnits[i].iris.scale.set(ap, ap, 1);
+        lens.emissiveIntensity = 1.5 + Math.sin(t * 1.6) * 0.22;
+        stripMat.emissiveIntensity = 0.55 + Math.sin(t * 0.9) * 0.28;
+      }
+
+      renderer.render(scene, camera);
+    };
+    renderer.render(scene, camera); // paint a first frame even if rAF is throttled
+    tick();
+  }
+
+  renderVals() {
+    const open = (i) => () => {
+      const c = this.cases[i];
+      this.setState({ active: Object.assign({}, c, { stackLine: c.stack.join(' · ') }) });
+    };
+    const endpoint = this.props.formspreeEndpoint || 'https://formspree.io/f/YOUR_FORM_ID';
+    return {
+      active: this.state.active,
+      formStatus: this.state.formStatus,
+      githubUrl: this.props.githubUrl || 'https://github.com/YOUR_HANDLE',
+      closeCase: () => this.setState({ active: null }),
+      stop: (e) => e.stopPropagation(),
+      open0: open(0), open1: open(1), open2: open(2), open3: open(3), open4: open(4), open5: open(5),
+      onSubmit: async (e) => {
+        e.preventDefault();
+        const form = e.target;
+        if (endpoint.indexOf('YOUR_FORM_ID') !== -1) {
+          this.setState({ formStatus: 'Form endpoint not set. Add your Formspree form URL in Tweaks to go live.' });
+          return;
+        }
+        this.setState({ formStatus: 'Sending…' });
+        try {
+          const res = await fetch(endpoint, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+          if (!res.ok) throw new Error('bad status');
+          form.reset();
+          this.setState({ formStatus: 'Sent. I reply within one business day.' });
+        } catch (err) {
+          this.setState({ formStatus: 'Could not send. Email amrsultan505@gmail.com directly.' });
+        }
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
